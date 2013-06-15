@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <modules>
+        <ECP_ImportEmptyValue>
+            <version>0.0.1</version>
+        </ECP_ImportEmptyValue>
+    </modules>
+    <global>
+        <models>
+            <ecp_importemptyvalue>
+                <class>ECP_ImportEmptyValue_Model</class>
+            </ecp_importemptyvalue>
+        </models>
+        <events>
+            <prepare_attributes_empty_value>
+                <observers>
+                    <ecp_importemptyvalue>
+                        <type>singleton</type>
+                        <class>ecp_importemptyvalue/observer</class>
+                        <method>prepare_attributes_empty_value</method>
+                    </ecp_importemptyvalue>
+                </observers>
+            </prepare_attributes_empty_value>
+        </events>
+    </global>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <impor_settings>
+                                            <title>Import Empty Value</title>
+                                        </impor_settings>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>
