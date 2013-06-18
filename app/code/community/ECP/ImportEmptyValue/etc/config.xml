@@ -32,9 +32,9 @@
                             <children>
                                 <config>
                                     <children>
-                                        <impor_settings>
+                                        <import_settings>
                                             <title>Import Empty Value</title>
-                                        </impor_settings>
+                                        </import_settings>
                                     </children>
                                 </config>
                             </children>
