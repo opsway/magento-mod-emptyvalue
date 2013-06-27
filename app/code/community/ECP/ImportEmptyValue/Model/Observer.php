@@ -33,13 +33,14 @@ class ECP_ImportEmptyValue_Model_Observer
                             case 'special_price':
                                 $rowDataAfter[$attribute] = null;
 
-//                                Uncomment if you want to nullify special date
-//                                $product = Mage::getModel('catalog/product')->loadByAttribute('sku', $rowDataBefore['sku']);
-//                                if (is_object($product)) {
-//                                    $product->setSpecialToDate('')
-//                                        ->setSpecialFromDate('')
-//                                        ->save();
-//                                }
+                                if (in_array("special_date", $attributes)) {
+                                    $product = Mage::getModel('catalog/product')->loadByAttribute('sku', $rowDataBefore['sku']);
+                                    if (is_object($product)) {
+                                        $product->setSpecialToDate('')
+                                            ->setSpecialFromDate('')
+                                            ->save();
+                                    }
+                                }
                                 break;
 
                             default:
